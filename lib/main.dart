@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'about.dart';
+import 'link.dart';
 import 'works.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: GoogleFonts.robotoTextTheme(
+        textTheme: GoogleFonts.sawarabiGothicTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage>
       text: "Works",
     ),
     Tab(
-      text: "About me",
+      text: "Link",
     ),
   ];
   TabController _tabController;
@@ -78,7 +78,7 @@ class _MainPageState extends State<MainPage>
           children: [
             Home(),
             Works(),
-            About()
+            Link()
           ]
         ));
   }
