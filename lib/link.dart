@@ -10,7 +10,7 @@ class Link extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Text("たべ/tabe")
+              Text("link")
             ]
           )
         ],

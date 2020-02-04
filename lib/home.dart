@@ -85,7 +85,7 @@ class Home extends StatelessWidget {
                       height: 10.0
                     ),
                 Text(
-                      'Flutter, Native iOSを中心に\nボイスロイドを中心としたユーザが使って楽しいものを開発しています\n\n 他にも、node.jsとFirebaseでロボット制御したり、\nUntiyやProcessingでコンテンツを作ったり、\nちょっとReactかじってみたりしています',
+                      'Flutter, Native iOSを中心に\nユーザが使って楽しいものを開発しています\n\n 他にも、node.jsでBot制作\nFirebaseでロボット制御\nUntiyやProcessingでコンテンツ制作\nReact, Nextでサイト構築\nとか色々やってます',
                       style: Theme.of(context).textTheme.bodyText1,
                       textAlign: TextAlign.center,
                     ),
