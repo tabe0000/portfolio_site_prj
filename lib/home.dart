@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:styled_text/styled_text.dart';
 
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

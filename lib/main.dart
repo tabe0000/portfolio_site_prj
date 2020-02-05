@@ -78,7 +78,7 @@ class _MainPageState extends State<MainPage>
           children: [
             Home(),
             Works(),
-            Link()
+            Link(),
           ]
         ));
   }
