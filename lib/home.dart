@@ -96,6 +96,7 @@ class Home extends StatelessWidget {
                   height: 10.0,
                 ),
                 StyledText(
+                  textAlign: TextAlign.center,
                   text: '<ios/> iOS / Flutter / Firebase / <unity/> Unity / Processing / <discord/> </twitter> Bot / <network/> IoT / <android/> Android / <react/> React / <html/> HTML & CSS',
                   styles: {
                     'ios': IconStyle(Fontisto.apple),

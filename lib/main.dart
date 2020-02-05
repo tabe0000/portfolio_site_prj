@@ -43,7 +43,6 @@ class _MainPageState extends State<MainPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabController = TabController(length: tabs.length, vsync: this);
   }
@@ -81,14 +80,5 @@ class _MainPageState extends State<MainPage>
             Link(),
           ]
         ));
-  }
-
-  Widget _createTab(Tab tab) {
-    return Center(
-      child: Text(
-        "10 min Rest Time",
-        style: TextStyle(fontSize: 24.0),
-      ),
-    );
   }
 }
