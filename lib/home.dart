@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:styled_text/styled_text.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -85,10 +87,27 @@ class Home extends StatelessWidget {
                       height: 10.0
                     ),
                 Text(
-                      'Flutter, Native iOSを中心に\nユーザが使って楽しいものを開発しています\n\n 他にも、node.jsでBot制作\nFirebaseでロボット制御\nUntiyやProcessingでコンテンツ制作\nReact, Nextでサイト構築\nとか色々やってます',
+                      "Flutter, Native iOSを中心に\nユーザが使って楽しいものを開発しています\n\n 技術は楽しそうと思えば何でも触っています\nLet's Swipe!",
                       style: Theme.of(context).textTheme.bodyText1,
                       textAlign: TextAlign.center,
                     ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                StyledText(
+                  text: '<ios/> iOS / Flutter / Firebase / <unity/> Unity / Processing / <discord/> </twitter> Bot / <network/> IoT / <android/> Android / <react/> React / <html/> HTML & CSS',
+                  styles: {
+                    'ios': IconStyle(Fontisto.apple),
+                    'unity': IconStyle(Fontisto.unity),
+                    'discord': IconStyle(Fontisto.discord),
+                    'twitter': IconStyle(Fontisto.twitter),
+                    'network': IconStyle(Entypo.network),
+                    'android': IconStyle(Fontisto.android),
+                    'react': IconStyle(Fontisto.react),
+                    'html': IconStyle(Fontisto.html5),
+                    'css': IconStyle(Fontisto.css3),
+                  },
+                ),
                 SizedBox(
                   height: 20.0,
                 ),
