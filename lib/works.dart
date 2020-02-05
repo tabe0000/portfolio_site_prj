@@ -16,7 +16,7 @@ class _WorksState extends State<Works> {
   @override
   void initState() {
     _placeList.add(
-      PlaceItem(false, 'unity', 'images/icon.png', Fontisto.unity),
+      PlaceItem(false, 'Unity', 'images/icon.png', Fontisto.unity),
     );
     _placeList.add(
       PlaceItem(false, 'Flutter', 'images/icon.png', FontAwesomeIcons.gamepad),
@@ -29,6 +29,18 @@ class _WorksState extends State<Works> {
     );
     _placeList.add(
       PlaceItem(false, 'Android', 'images/icon.png', FontAwesomeIcons.android),
+    );
+    _placeList.add(
+      PlaceItem(false, 'Bot', 'images/icon.png', Fontisto.discord),
+    );
+    _placeList.add(
+      PlaceItem(false, 'IoT', 'images/icon.png', Entypo.network)
+    );
+    _placeList.add(
+      PlaceItem(false, 'React & Next.js', 'images/icon.png', Fontisto.react)
+    );
+    _placeList.add(
+      PlaceItem(false, 'HTML & CSS', 'images/icon.png', Fontisto.html5)
     );
     super.initState();
   }
