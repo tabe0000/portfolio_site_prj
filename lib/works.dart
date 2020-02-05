@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:animated_card/animated_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+
 
 class Works extends StatefulWidget {
   Works({Key key}) : super(key: key);
@@ -15,13 +16,19 @@ class _WorksState extends State<Works> {
   @override
   void initState() {
     _placeList.add(
-      PlaceItem(false, 'gamepad', 'images/icon.png', FontAwesomeIcons.gamepad),
+      PlaceItem(false, 'unity', 'images/icon.png', Fontisto.unity),
     );
     _placeList.add(
       PlaceItem(false, 'Flutter', 'images/icon.png', FontAwesomeIcons.gamepad),
     );
     _placeList.add(
       PlaceItem(false, 'Processing', 'images/icon.png', FontAwesomeIcons.gamepad),
+    );
+    _placeList.add(
+      PlaceItem(false, 'iOS', 'images/icon.png', FontAwesomeIcons.apple),
+    );
+    _placeList.add(
+      PlaceItem(false, 'Android', 'images/icon.png', FontAwesomeIcons.android),
     );
     super.initState();
   }
@@ -53,7 +60,6 @@ class PlaceItem {
   String name;
   String image;
   IconData icon;
-
   PlaceItem(this.isExpanded, this.name, this.image, this.icon);
 }
 
@@ -66,7 +72,7 @@ ExpansionPanel _createPanel(PlaceItem place) {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(right: 10.0),
-              child: Icon(Icons.image),
+              child: Icon(place.icon),
             ),
             Text(
               place.name,
