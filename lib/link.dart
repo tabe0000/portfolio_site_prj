@@ -10,7 +10,15 @@ class Link extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Text("link")
+              Text("link"),
+              SizedBox(height: 30),
+                RaisedButton(
+                  onPressed: () => showLicensePage(context: context),
+                  child: const Text(
+                    'About Lisence',
+                    style: TextStyle(fontSize: 20)
+                  ),
+                ),
             ]
           )
         ],
