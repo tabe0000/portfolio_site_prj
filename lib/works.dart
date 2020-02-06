@@ -16,32 +16,17 @@ class _WorksState extends State<Works> {
   @override
   void initState() {
     _placeList.add(
-      PlaceItem(false, 'Unity', 'images/icon.png', Fontisto.unity),
+      PlaceItem(false, 'Mobile', 'images/icon.png', Fontisto.mobile_alt),
     );
     _placeList.add(
-      PlaceItem(false, 'Flutter', 'images/icon.png', FontAwesomeIcons.gamepad),
+      PlaceItem(false, 'IoT', 'images/icon.png', Entypo.network),
     );
     _placeList.add(
-      PlaceItem(false, 'Processing', 'images/icon.png', FontAwesomeIcons.gamepad),
+      PlaceItem(false, 'Robot', 'images/icon.png', MaterialCommunityIcons.robot),
     );
     _placeList.add(
-      PlaceItem(false, 'iOS', 'images/icon.png', FontAwesomeIcons.apple),
-    );
-    _placeList.add(
-      PlaceItem(false, 'Android', 'images/icon.png', FontAwesomeIcons.android),
-    );
-    _placeList.add(
-      PlaceItem(false, 'Bot', 'images/icon.png', Fontisto.discord),
-    );
-    _placeList.add(
-      PlaceItem(false, 'IoT', 'images/icon.png', Entypo.network)
-    );
-    _placeList.add(
-      PlaceItem(false, 'React & Next.js', 'images/icon.png', Fontisto.react)
-    );
-    _placeList.add(
-      PlaceItem(false, 'HTML & CSS', 'images/icon.png', Fontisto.html5)
-    );
+      PlaceItem(false, 'PC', 'images/icon.png', FontAwesome.laptop),
+    );    
     super.initState();
   }
   
