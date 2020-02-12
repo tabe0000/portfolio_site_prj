@@ -37,14 +37,14 @@ class PortfolioCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(children: <Widget>[
-      Image.asset(thumbnailImagePath),
-      Container(
-          margin: EdgeInsets.all(10.0),
-          child: ListTile(
-              title: Text(name),
-              leading: Icon(iconData),
-              subtitle: Text(usingTechnology + " / " + programingLanguageUsed)))
+      child: Column(children: <Widget>[
+        Image.asset(thumbnailImagePath),
+        Container(
+            margin: EdgeInsets.all(10.0),
+            child: ListTile(
+                title: Text(name),
+                leading: Icon(iconData),
+                subtitle: Text(usingTechnology + " / " + programingLanguageUsed)))
     ]));
   }
 }
