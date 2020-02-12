@@ -15,7 +15,8 @@ class PortfolioData {
   String supporterdPlatform;
   String playStoreLink;
   String appStoreLink;
+
+  PortfolioData(this.name, this.usingTechnology, this.downloads, this.comment,
+  this.thumbnailImagePath, this.description, this.descriptionImagePath, this.programingLanguageUsed,
+  this.supporterdPlatform, this.playStoreLink, this.appStoreLink);
 }
-
-
-
