@@ -27,14 +27,42 @@ class _WorksState extends State<Works> {
           children: <Widget>[
 
             Container(
-              padding: EdgeInsets.symmetric(vertical: 15),
+              padding: EdgeInsets.only(top: 15, bottom: 23),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Text("all"),
-                  Text("Mobile"),
-                  Text("IoT"),
-                  Text("Web"),
+                  RaisedButton(
+                    child: Text("All"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () {},
+                  ),
+                  RaisedButton(
+                    child: Text("Mobile"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () {},
+                  ),
+                  RaisedButton(
+                    child: Text("IoT"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () {},
+                  ),
+                  RaisedButton(
+                    child: Text("Web"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () {},
+                  ),                                    
                 ],
               ),
             ),
