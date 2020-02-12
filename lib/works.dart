@@ -22,13 +22,38 @@ class _WorksState extends State<Works> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(8.0),
-      child: ListView(
-        children: <Widget>[
-          _portfolioCards[0]
-          //Text("hoge")
-        ],
-      ),
-    );
+      child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Text("all"),
+                  Text("Mobile"),
+                  Text("IoT"),
+                  Text("Web"),
+                ],
+              ),
+            ),
+
+            ListView(
+              physics: ClampingScrollPhysics(),
+              shrinkWrap: true,
+              children: <Widget>[
+                _portfolioCards[0],
+                _portfolioCards[0],
+                _portfolioCards[0],
+                _portfolioCards[0],
+              //Text("hoge")
+              ],
+            ),
+          ]
+        ),
+          )
+      );
   }
 
   void generateCards() {
