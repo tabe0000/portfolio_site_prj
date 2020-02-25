@@ -20,31 +20,44 @@ class PortfolioCard extends StatelessWidget {
   String playStoreLink;
   String appStoreLink;
 
+  //meta
+  WorksTech worksTech;
+
+
   PortfolioCard(
-      this.name,
-      this.usingTechnology,
-      this.downloads,
-      this.iconData,
-      this.comment,
-      this.thumbnailImagePath,
-      this.description,
-      this.descriptionImagePath,
-      this.programingLanguageUsed,
-      this.supporterdPlatform,
-      this.playStoreLink,
-      this.appStoreLink);
+    this.name,
+    this.usingTechnology,
+    this.downloads,
+    this.iconData,
+    this.comment,
+    this.thumbnailImagePath,
+    this.description,
+    this.descriptionImagePath,
+    this.programingLanguageUsed,
+    this.supporterdPlatform,
+    this.playStoreLink,
+    this.appStoreLink,
+    this.worksTech,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(children: <Widget>[
-        Image.asset(thumbnailImagePath),
-        Container(
-            margin: EdgeInsets.all(10.0),
-            child: ListTile(
-                title: Text(name),
-                leading: Icon(iconData),
-                subtitle: Text(usingTechnology + " / " + programingLanguageUsed)))
+        child: Column(children: <Widget>[
+      Image.asset(thumbnailImagePath),
+      Container(
+          margin: EdgeInsets.all(10.0),
+          child: ListTile(
+              title: Text(name),
+              leading: Icon(iconData),
+              subtitle: Text(usingTechnology + " / " + programingLanguageUsed)))
     ]));
   }
+}
+
+enum WorksTech {
+  ALL,
+  MOBILE,
+  IOT,
+  WEB,
 }
