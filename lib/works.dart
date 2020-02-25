@@ -22,14 +22,18 @@ class _WorksState extends State<Works> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Container(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(
+            vertical: 8.0, horizontal: size.width < 800 ? 10 : size.width / 5),
         child: SingleChildScrollView(
           child: Column(children: <Widget>[
             Container(
               padding: EdgeInsets.only(top: 15, bottom: 23),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: Wrap(
+                direction: Axis.horizontal,
+                spacing: 10.0,
                 children: <Widget>[
                   RaisedButton(
                     child: Text("All"),
@@ -48,6 +52,14 @@ class _WorksState extends State<Works> {
                     onPressed: () => refleshPortfolioCards(WorksTech.MOBILE),
                   ),
                   RaisedButton(
+                    child: Text("Web"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () => refleshPortfolioCards(WorksTech.WEB),
+                  ),
+                  RaisedButton(
                     child: Text("IoT"),
                     color: Colors.white,
                     shape: StadiumBorder(
@@ -56,24 +68,40 @@ class _WorksState extends State<Works> {
                     onPressed: () => refleshPortfolioCards(WorksTech.IOT),
                   ),
                   RaisedButton(
-                    child: Text("Web"),
+                    child: Text("Bot"),
                     color: Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
-                    onPressed: () => refleshPortfolioCards(WorksTech.WEB),
+                    onPressed: () => refleshPortfolioCards(WorksTech.BOT),
+                  ),
+                  RaisedButton(
+                    child: Text("Visual Art"),
+                    color: Colors.white,
+                    shape: StadiumBorder(
+                      side: BorderSide(color: Colors.black),
+                    ),
+                    onPressed: () =>
+                        refleshPortfolioCards(WorksTech.VISUAL_ART),
                   ),
                 ],
               ),
             ),
-            ListView(
-                physics: ClampingScrollPhysics(),
-                shrinkWrap: true,
-                children: _selectedPortfolioCards),
+            ListView.builder(
+              physics: ClampingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: _selectedPortfolioCards.length,
+              itemBuilder: (BuildContext context, int index) {
+                print(size.width);
+                print(size.width / 2);
+                return _selectedPortfolioCards[index];
+              },
+            ),
           ]),
         ));
   }
 
+  //タブ切り替え時のリスト再生成
   void refleshPortfolioCards(WorksTech selectedTech) {
     setState(() {
       _selectedPortfolioCards = [];
@@ -97,7 +125,7 @@ class _WorksState extends State<Works> {
           "Unity",
           10000,
           Fontisto.unity,
-          "comment",
+          "ボイスロイドと二人乗り出来る！",
           "assets/app_images/voiroto.png",
           "desc",
           "imgPath/descpath",
@@ -113,7 +141,7 @@ class _WorksState extends State<Works> {
           "Node.js,Arduino",
           13000,
           Fontisto.nodejs,
-          "comment",
+          "コメントでネギ振りが出来る謎システム",
           "assets/app_images/negi.gif",
           "desc",
           "imgPath/descpath",
@@ -129,7 +157,7 @@ class _WorksState extends State<Works> {
         "React, Next.js",
         0,
         Fontisto.react,
-        "commnet",
+        "nuko.now.shが取れてしまった",
         "assets/app_images/next_nuko_serve.png",
         "desc",
         "imgPath/descpath",
