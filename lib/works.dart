@@ -98,7 +98,7 @@ class _WorksState extends State<Works> {
           10000,
           Fontisto.unity,
           "comment",
-          "assets/images/icon.png",
+          "assets/app_images/voiroto.png",
           "desc",
           "imgPath/descpath",
           "C#",
@@ -114,7 +114,7 @@ class _WorksState extends State<Works> {
           13000,
           Fontisto.nodejs,
           "comment",
-          "assets/images/icon.png",
+          "assets/app_images/negi.gif",
           "desc",
           "imgPath/descpath",
           "Javascript",
@@ -123,13 +123,14 @@ class _WorksState extends State<Works> {
           "niconico link",
           WorksTech.IOT),
     );
-    _portfolioCards.add(PortfolioCard(
+    _portfolioCards.add(
+      PortfolioCard(
         "ぬこ補給所",
         "React, Next.js",
         0,
         Fontisto.react,
         "commnet",
-        "assets/images/icon.png",
+        "assets/app_images/next_nuko_serve.png",
         "desc",
         "imgPath/descpath",
         "Javascript",
