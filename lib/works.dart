@@ -107,8 +107,6 @@ class _WorksState extends State<Works> {
               shrinkWrap: true,
               itemCount: _selectedPortfolioCards.length,
               itemBuilder: (BuildContext context, int index) {
-                print(size.width);
-                print(size.width / 2);
                 return _selectedPortfolioCards[index];
               },
             ),
