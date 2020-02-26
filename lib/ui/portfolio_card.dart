@@ -138,12 +138,9 @@ class Details extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
-              child: Wrap(
-                  direction: Axis.horizontal,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 20.0,
-                  runSpacing: 20.0,
-                  children: <Widget>[
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
                 //popup left contents.
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
