@@ -12,6 +12,7 @@ class Works extends StatefulWidget {
 class _WorksState extends State<Works> {
   var _portfolioCards = List<PortfolioCard>();
   var _selectedPortfolioCards = List<PortfolioCard>();
+  var _selectedWorksTech = WorksTech.ALL;
 
   @override
   void initState() {
@@ -37,15 +38,15 @@ class _WorksState extends State<Works> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("All"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.ALL ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
-                      side: BorderSide(color: Colors.black),
+                      side: BorderSide(color: Colors.black,),
                     ),
                     onPressed: () => refleshPortfolioCards(WorksTech.ALL),
                   ),
                   RaisedButton(
                     child: Text("Mobile"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.MOBILE ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -53,7 +54,7 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Web"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.WEB ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -61,7 +62,7 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("IoT"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.IOT ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -69,7 +70,7 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Bot"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.BOT ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -77,7 +78,7 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Visual Art"),
-                    color: Colors.white,
+                    color: _selectedWorksTech == WorksTech.VISUAL_ART ? Colors.grey.withOpacity(0.9) : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -103,6 +104,7 @@ class _WorksState extends State<Works> {
 
   //タブ切り替え時のリスト再生成
   void refleshPortfolioCards(WorksTech selectedTech) {
+    _selectedWorksTech = selectedTech;
     setState(() {
       _selectedPortfolioCards = [];
       if (selectedTech == WorksTech.ALL) {
@@ -151,8 +153,7 @@ class _WorksState extends State<Works> {
           "niconico link",
           WorksTech.IOT),
     );
-    _portfolioCards.add(
-      PortfolioCard(
+    _portfolioCards.add(PortfolioCard(
         "ぬこ補給所",
         "React, Next.js",
         0,
