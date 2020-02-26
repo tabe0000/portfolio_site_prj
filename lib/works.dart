@@ -290,7 +290,7 @@ class _WorksState extends State<Works> {
         Fontisto.nodejs,
         "手軽な「ぬこ」の補給方法を確立しました。",
         "assets/app_images/nuko_bot.png",
-        "近々、Javascriptを触らないといけないっぽかったので、練習として作成した。\n\n今回は世界に挨拶するように天気API叩いても仕方ないので、Processingと連携させてみた。\n\n/proというコマンドとともに、ソースを投げると画像を生成して返してくれる。\n\n一応、他にもいろんな機能がある。(meme投げるとか、デプロイすると褒めてくれるとか、発狂するとか)\n\n実装方法をゴリ押しにしてしまい、セキュリティ的に大変よろしくないものとなったので身内サーバーで使う予定。\n\n割と楽しかったので、TwitterBotも作りたい。",
+        "友人がTwitterBotを動かしているのを見て羨ましくなりなんとなく初めた。\n\nどこかでねこの画像を見ると眠気ざましになるという話を聞き、APIを叩いてぬこの画像を取得して返すボットを作成した\n\n#give_me_nukoとツイートするとリプライをくれる。よく鯖落ちしているので必ず返ってくるとは限らない。\n\nherokuなどにデプロイしても良かったが、お部屋にCPU: Centrino, RAM: 2GBのつよつよパソコン()が余っていたので、それでサーバを運用をしている\n\n同時にサーバPCに入れたkona Linuxがものすごく軽く、パッケージの更新がubuntuよりも異様に早く驚いた。",
         "imagePath/descPath",
         "JavaScript",
         "Windows/Mac/Linux",
