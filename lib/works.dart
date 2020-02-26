@@ -143,7 +143,7 @@ class _WorksState extends State<Works> {
           Fontisto.nodejs,
           "コメントでネギ振りが出来る謎システム",
           "assets/app_images/negi.gif",
-          "desc",
+          "ニコニコ生放送のコメントを取得し、Arduino経由で接続されたはちゅねミクにネギを振らせる\n\n前々から、ニコニコ技術部ではちゅねにネギを振らせる文化に自分も参加したいと思っていた。そしてとある日の深夜1時、唐突にゾーンに入り作り上げた\n\nリアルタイムにインターネットを介してハード制御をすることの楽しさを知った\n\nIoTって楽しいのではと気がつき、ノリと勢いでESP32とセンサーを買い込んだので、FlutterとFirebaseを組み合わせたIoTデバイスを作っていく予定\n\n完全に余談だが、これの作ってみた動画がニコニコニュースで紹介されたり、運営にタグホームへ貼り付けられたりした結果1.3万再生を達成した",
           "imgPath/descpath",
           "Javascript",
           "Windows/Mac/Linux",
