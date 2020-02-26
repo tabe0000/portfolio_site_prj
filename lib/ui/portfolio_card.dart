@@ -50,15 +50,18 @@ class _PortfolioCardState extends State<PortfolioCard> {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
-          showDialog(
-            context: context,
-            builder: (_) => FunkyOverlay(
-              description: widget.description,
-              supportedPlatform: widget.supporterdPlatform,
-              programingLanguageUsed: widget.programingLanguageUsed,
-              downloads: widget.downloads,
-              usingTechnology: widget.usingTechnology,
-            ),
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) => Details(
+                      name: widget.name,
+                      thumbnailImagePath: widget.thumbnailImagePath,
+                      description: widget.description,
+                      supportedPlatform: widget.supporterdPlatform,
+                      programingLanguageUsed: widget.programingLanguageUsed,
+                      downloads: widget.downloads,
+                      usingTechnology: widget.usingTechnology,
+                    )),
           );
         },
         child: Container(
@@ -89,27 +92,6 @@ class _PortfolioCardState extends State<PortfolioCard> {
           ]))
         ]))));
   }
-
-  Widget expandedContent() {
-    return Column(
-      children: <Widget>[
-        Text(widget.description),
-        SizedBox(height: 20.0),
-        Text(
-          "Data of this app",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Text(widget.description),
-        Text("Programing Languaged used" +
-            "\n\n" +
-            widget.programingLanguageUsed),
-        Text("d")
-      ],
-    );
-  }
 }
 
 enum WorksTech {
@@ -121,9 +103,11 @@ enum WorksTech {
   VISUAL_ART,
 }
 
-class FunkyOverlay extends StatefulWidget {
-  FunkyOverlay(
+class Details extends StatelessWidget {
+  Details(
       {Key key,
+      this.name,
+      this.thumbnailImagePath,
       this.description,
       this.supportedPlatform,
       this.programingLanguageUsed,
@@ -131,6 +115,8 @@ class FunkyOverlay extends StatefulWidget {
       this.usingTechnology})
       : super(key: key);
 
+  final String name;
+  final String thumbnailImagePath;
   final String usingTechnology;
   final String description;
   final String supportedPlatform;
@@ -138,72 +124,74 @@ class FunkyOverlay extends StatefulWidget {
   final int downloads;
 
   @override
-  State<StatefulWidget> createState() => FunkyOverlayState();
-}
-
-class FunkyOverlayState extends State<FunkyOverlay>
-    with SingleTickerProviderStateMixin {
-  AnimationController controller;
-  Animation<double> scaleAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 450));
-    scaleAnimation =
-        CurvedAnimation(parent: controller, curve: Curves.easeInExpo);
-
-    controller.addListener(() {
-      setState(() {});
-    });
-
-    controller.forward();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Material(
-        color: Colors.transparent,
-        child: ScaleTransition(
-          scale: scaleAnimation,
-          child: Container(
-            height: MediaQuery.of(context).size.height / 1.5,
-            decoration: ShapeDecoration(
-                color: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0))),
-            child: Padding(
-                padding: const EdgeInsets.all(50.0),
-                child: SingleChildScrollView(
-                    child: Column(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text(
+          name,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: SingleChildScrollView(
+              child: Wrap(
+                  direction: Axis.horizontal,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 20.0,
+                  runSpacing: 20.0,
+                  children: <Widget>[
+                //popup left contents.
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(widget.description),
-                    SizedBox(height: 30.0),
+                    SizedBox(
+                      height: null,
+                      width: MediaQuery.of(context).size.width / 2.0,
+                      child: Image.asset(thumbnailImagePath),
+                    ),
+                    Text(
+                      description,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                //popup right contents.
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
                     Text(
                       "Data of this app",
                       style: TextStyle(
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         fontSize: 20,
                       ),
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
+                    Text("Title",
+                        style: TextStyle(fontWeight: FontWeight.w600)),
+                    SizedBox(height: 5),
+                    Text(name),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     Text("Made with",
                         style: TextStyle(fontWeight: FontWeight.w600)),
                     SizedBox(height: 5),
-                    Text(widget.usingTechnology),
+                    Text(usingTechnology),
                     SizedBox(
                       height: 10.0,
                     ),
                     Text("Supported Platform",
                         style: TextStyle(fontWeight: FontWeight.w600)),
                     SizedBox(height: 5),
-                    Text(widget.supportedPlatform),
+                    Text(supportedPlatform),
                     SizedBox(
                       height: 10.0,
                     ),
@@ -215,7 +203,7 @@ class FunkyOverlayState extends State<FunkyOverlay>
                     SizedBox(
                       height: 5.0,
                     ),
-                    Text(widget.programingLanguageUsed),
+                    Text(programingLanguageUsed),
                     SizedBox(height: 10.0),
                     Text(
                       "Donwloads",
@@ -225,18 +213,15 @@ class FunkyOverlayState extends State<FunkyOverlay>
                     SizedBox(
                       height: 5.0,
                     ),
-                    Text(widget.downloads == 0
-                        ? "?"
-                        : "over" + widget.downloads.toString()),
+                    Text(downloads == 0 ? "?" : "over " + downloads.toString()),
                     SizedBox(height: 10.0),
                     Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
                     SizedBox(height: 5.0),
                     Text("https://example.com")
                   ],
-                ))),
-          ),
-        ),
-      ),
+                ),
+                Spacer(),
+              ]))),
     );
   }
 }
