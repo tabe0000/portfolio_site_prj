@@ -147,8 +147,10 @@ class _WorksState extends State<Works> {
           "imgPath/descpath",
           "C#",
           "Android/iOS",
-          "google store link",
-          "app store link",
+          "no github link",
+          "no web link",
+          "https://apps.apple.com/jp/app/%E3%83%9C%E3%82%A4%E3%83%AD%E3%81%A8%E3%81%8A%E3%83%90%E3%82%A4%E3%82%AF/id1436279821",
+          "https://play.google.com/store/apps/details?id=com.tabe.MotorCycleWaifu&hl=ja",
           WorksTech.MOBILE),
     );
     _portfolioCards.add(
@@ -163,8 +165,10 @@ class _WorksState extends State<Works> {
           "imgPath/descpath",
           "JavaScript",
           "Windows/Mac/Linux",
-          "github link",
-          "niconico link",
+          "https://github.com/tabe0000/niconama_tech_prj",
+          "https://www.nicovideo.jp/watch/sm35859661",
+          "no appStore link",
+          "no googleplay link",
           WorksTech.IOT),
     );
     _portfolioCards.add(
@@ -179,8 +183,10 @@ class _WorksState extends State<Works> {
           "imgPath/descpath",
           "Swift",
           "iOS",
-          "github link",
-          "store link",
+          "no github link",
+          "no web link ",
+          "https://apple.co/2Sllyam",
+          "no playstore link",
           WorksTech.MOBILE),
     );
     _portfolioCards.add(PortfolioCard(
@@ -194,8 +200,10 @@ class _WorksState extends State<Works> {
         "imgPath/descpath",
         "Java",
         "Android",
-        "github link",
-        "store link",
+        "no github link",
+        "no web link",
+        "no appstore link",
+        "https://play.google.com/store/apps/details?id=jp.dip.tabe.ceviobikeapp",
         WorksTech.MOBILE));
     _portfolioCards.add(PortfolioCard(
         "Flutter ポートフォリオサイト",
@@ -210,22 +218,25 @@ class _WorksState extends State<Works> {
         "Everything",
         "https://github.com/tabe0000/portfolio_site_prj",
         "https://tabedev.work",
+        "no appstore link",
+        "no playstore link",
         WorksTech.WEB));
     _portfolioCards.add(PortfolioCard(
-      "照度監視システム、アプリ",
-      "Flutter, Firebase, ESP32",
-      0,
-      Entypo.network,
-      "Flutter, Firebase RealtimeDatabaseを使用して、照度監視アプリを作成。",
-      "assets/app_images/monitor_brightness_app.png",
-      "高専ディープラーニングコンテスト(DCON)に使用するためのアプリのモックアップとして制作をした。\n\nFirebase RealtimeDatabaseとFlutterの連携における文献がほとんど無く制作するのが大変だった。時間ができたらFlutterとFirebaseの連携に関する記事を書いていきたい。\n\nまた、ESP32というマイコンを使った。このマイコンは一つ1000円にも満たないにもかかわらず、WiFI, Bluetoothを使うことが出来ることに驚いた。\n\nIoT製品を作る楽しさを知ったので、また何か作りたいと思う。\n\n写真のbrightnessがlightnessに見える人は病気です。スペルミスなんかじゃありません。ええ決して。勘違いしてたとかじゃありません。",
-      "imgpath/descpath",
-      "Dart, C",
-      "Android/iOS",
-      "no github page",
-      "https://twitter.com/tabe_unity/status/1210497318555766784?s=20",
-      WorksTech.IOT
-    ));
+        "照度監視システム、アプリ",
+        "Flutter, Firebase, ESP32",
+        0,
+        Entypo.network,
+        "Flutter, Firebase RealtimeDatabaseを使用して、照度監視アプリを作成。",
+        "assets/app_images/monitor_brightness_app.png",
+        "高専ディープラーニングコンテスト(DCON)に使用するためのアプリのモックアップとして制作をした。\n\nFirebase RealtimeDatabaseとFlutterの連携における文献がほとんど無く制作するのが大変だった。時間ができたらFlutterとFirebaseの連携に関する記事を書いていきたい。\n\nまた、ESP32というマイコンを使った。このマイコンは一つ1000円にも満たないにもかかわらず、WiFI, Bluetoothを使うことが出来ることに驚いた。\n\nIoT製品を作る楽しさを知ったので、また何か作りたいと思う。\n\n写真のbrightnessがlightnessに見える人は病気です。スペルミスなんかじゃありません。ええ決して。勘違いしてたとかじゃありません。",
+        "imgpath/descpath",
+        "Dart, C",
+        "Android/iOS",
+        "no github page",
+        "https://twitter.com/tabe_unity/status/1210497318555766784?s=20",
+        "no app sotre link",
+        "no play store link",
+        WorksTech.IOT));
     _portfolioCards.add(PortfolioCard(
         "SoundCircle",
         "Processing",
@@ -239,6 +250,8 @@ class _WorksState extends State<Works> {
         "Windows/Mac/Linux",
         "https://github.com/tabe0000",
         "no web pagelink",
+        "no app store link",
+        "no play store link",
         WorksTech.VISUAL_ART));
     _portfolioCards.add(PortfolioCard(
         "某有名ブラクラの再現",
@@ -247,12 +260,14 @@ class _WorksState extends State<Works> {
         Fontisto.java,
         "インターネット老人会の方はわかりますよね。",
         "assets/app_images/alreadyIdiot.png",
-        "懐かしいアレです。\n\nProcessingの練習として画像を一切使用することなく、全てコーディングで作成しました。\n\n某事件が起こった直後に制作をしたため、一時期公開をしていなかったのですが、ほとぼりが冷めてきたので公開に切り替えました。音源はご自身でご用意ください。",
+        "懐かしいブラクラです。インターネット老人会の方はわかりますよね。\n\nProcessingの練習として画像を一切使用することなく、全てコーディングで作成しました。\n\n某事件が起こった直後に制作をしたため、一時期公開をしていなかったのですが、ほとぼりが冷めてきたので公開に切り替えました。音源はご自身でご用意ください。",
         "imgpPath/descpath",
         "Java",
         "Windows/Mac/Linux",
         "https://github.com/tabe0000/you-are-an-idiot-processing",
         "web pagelink",
+        "no app store link",
+        "no play store link",
         WorksTech.VISUAL_ART));
     _portfolioCards.add(PortfolioCard(
         "DiscordBot",
@@ -267,6 +282,8 @@ class _WorksState extends State<Works> {
         "Windows/Mac/Linux",
         "no github link",
         "no web pagelink",
+        " no store",
+        "no",
         WorksTech.BOT));
     _portfolioCards.add(PortfolioCard(
         "nuko bot.",
@@ -280,7 +297,9 @@ class _WorksState extends State<Works> {
         "JavaScript",
         "Windows/Mac/Linux",
         "no github link",
-        "no web pagelink",
+        "no",
+        "no",
+        "no",
         WorksTech.BOT));
     _portfolioCards.add(PortfolioCard(
         "ぬこ補給所",
@@ -295,6 +314,8 @@ class _WorksState extends State<Works> {
         "Everything",
         "no github link",
         "https://nuko.now.sh",
+        "no",
+        "no",
         WorksTech.WEB));
     _portfolioCards.add(PortfolioCard(
         "RealTimeVRTrip",
@@ -309,6 +330,8 @@ class _WorksState extends State<Works> {
         "Windows",
         "no github link",
         "no web pagelink",
+        "no",
+        "no",
         WorksTech.IOT));
     _portfolioCards.add(PortfolioCard(
         "タイマー付きTodoリスト",
@@ -323,6 +346,8 @@ class _WorksState extends State<Works> {
         "Everything",
         "https://github.com/tabe0000/timer_todo_list",
         "https://upbeat-bhabha-6ac256.netlify.com/#/",
+        "no",
+        "no",
         WorksTech.WEB));
     _portfolioCards.add(PortfolioCard(
       "VOICEROID & CeVIOにゃーんあぷり",
@@ -337,6 +362,8 @@ class _WorksState extends State<Works> {
       "Android",
       "no github page",
       "https://play.google.com/store/apps/details?id=work.tabedev.nyanapp.nyan",
+      "no",
+      "no",
       WorksTech.MOBILE,
     ));
     _portfolioCards.add(PortfolioCard(
@@ -352,6 +379,8 @@ class _WorksState extends State<Works> {
         "Everything",
         "https://github.com/tabe0000/flutter_todo_list_for_web",
         "https://tabe0000.github.io/flutter_todo_list_for_web/#/",
+        "no",
+        "no",
         WorksTech.WEB));
     _portfolioCards.add(PortfolioCard(
         "旧ポートフォリオサイト",
@@ -366,6 +395,8 @@ class _WorksState extends State<Works> {
         "Everything",
         "no github link",
         "no webpagelink",
+        "no",
+        "no",
         WorksTech.WEB));
 
     _selectedPortfolioCards = _portfolioCards;

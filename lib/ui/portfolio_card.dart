@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioCard extends StatefulWidget {
   //common property
@@ -19,6 +20,8 @@ class PortfolioCard extends StatefulWidget {
   String descriptionImagePath;
   String programingLanguageUsed;
   String supporterdPlatform;
+  String githubLink;
+  String webLink;
   String playStoreLink;
   String appStoreLink;
 
@@ -36,8 +39,10 @@ class PortfolioCard extends StatefulWidget {
     this.descriptionImagePath,
     this.programingLanguageUsed,
     this.supporterdPlatform,
-    this.playStoreLink,
+    this.githubLink,
+    this.webLink,
     this.appStoreLink,
+    this.playStoreLink,
     this.worksTech,
   );
 
@@ -61,41 +66,45 @@ class _PortfolioCardState extends State<PortfolioCard> {
                       programingLanguageUsed: widget.programingLanguageUsed,
                       downloads: widget.downloads,
                       usingTechnology: widget.usingTechnology,
+                      githubLink: widget.githubLink,
+                      webLink: widget.webLink,
+                      playStoreLink: widget.playStoreLink,
+                      appStoreLink: widget.appStoreLink,
                     )),
           );
         },
         child: Container(
-            constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height / 2),
+            constraints: BoxConstraints(
+                maxHeight: MediaQuery.of(context).size.height / 2),
             child: Card(
                 child: Column(children: <Widget>[
-          ConstrainedBox(
-            constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height / 3),
-            child: Image.asset(
-              widget.thumbnailImagePath,
-              fit: BoxFit.fill
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height / 3),
+                child: Image.asset(widget.thumbnailImagePath, fit: BoxFit.fill),
               ),
-          ),
-          Container(
-              child: Column(children: <Widget>[
-            ListTile(
-                title: Text(widget.name),
-                leading: Icon(widget.iconData),
-                subtitle: Text(widget.usingTechnology +
-                    " / " +
-                    widget.programingLanguageUsed)),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-              width: double.infinity,
-              child: Text(
-                widget.comment,
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.4),
+              Container(
+                  child: Column(children: <Widget>[
+                ListTile(
+                    title: Text(widget.name),
+                    leading: Icon(widget.iconData),
+                    subtitle: Text(widget.usingTechnology +
+                        " / " +
+                        widget.programingLanguageUsed)),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                  width: double.infinity,
+                  child: Text(
+                    widget.comment,
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.4),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
-                textAlign: TextAlign.left,
-              ),
-            ),
-          ]))
-        ]))));
+              ]))
+            ]))));
   }
 }
 
@@ -117,6 +126,10 @@ class Details extends StatelessWidget {
       this.supportedPlatform,
       this.programingLanguageUsed,
       this.downloads,
+      this.githubLink,
+      this.webLink,
+      this.playStoreLink,
+      this.appStoreLink,
       this.usingTechnology})
       : super(key: key);
 
@@ -127,6 +140,10 @@ class Details extends StatelessWidget {
   final String supportedPlatform;
   final String programingLanguageUsed;
   final int downloads;
+  final String githubLink;
+  final String webLink;
+  final String playStoreLink;
+  final String appStoreLink;
 
   @override
   Widget build(BuildContext context) {
@@ -146,123 +163,152 @@ class Details extends StatelessWidget {
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
           child: SingleChildScrollView(
-              child: MediaQuery.of(context).size.width > 501 ? desktopDataWidget(context) : mobileDetailsWidget(context))),
+              child: MediaQuery.of(context).size.width > 501
+                  ? desktopDataWidget(context)
+                  : mobileDetailsWidget(context))),
     );
   }
 
   Widget mobileDetailsWidget(context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        SizedBox(height: 25.0),
-        //popup left contents.
-        Container(
-          width: MediaQuery.of(context).size.width * 0.95,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                height: null,
-                width: MediaQuery.of(context).size.width / 1.5,
-                child: Image.asset(thumbnailImagePath),
-              ),
-              SizedBox(
-                height: 30.0
-              ),
-              Text(
-                description,
-                textAlign: TextAlign.center,
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 30.0
-        ),
-        //popup right contents.
-        Container(
-          width: MediaQuery.of(context).size.width * 0.95,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Data of this app",
-                style: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 20,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          SizedBox(height: 25.0),
+          //popup left contents.
+          Container(
+            width: MediaQuery.of(context).size.width * 0.95,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: null,
+                  width: MediaQuery.of(context).size.width / 1.5,
+                  child: Image.asset(thumbnailImagePath),
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Text("Title",
-                  style: TextStyle(fontWeight: FontWeight.w600)),
-              SizedBox(height: 5),
-              Text(name),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text("Made with",
-                  style: TextStyle(fontWeight: FontWeight.w600)),
-              SizedBox(height: 5),
-              Text(usingTechnology),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text("Supported Platform",
-                  style: TextStyle(fontWeight: FontWeight.w600)),
-              SizedBox(height: 5),
-              Text(supportedPlatform),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text(
-                "Programing Languaged Used",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w600),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(programingLanguageUsed),
-              SizedBox(height: 10.0),
-              Text(
-                "Donwloads",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w600),
-              ),
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(downloads == 0
-                  ? "?"
-                  : "over " + downloads.toString()),
-              SizedBox(height: 10.0),
-              Text("Link",
-                  style: TextStyle(fontWeight: FontWeight.w600)),
-              SizedBox(height: 5.0),
-              Text("https://example.com"),
-              SizedBox(height: 20.0,),
-            ],
+                SizedBox(height: 30.0),
+                Text(
+                  description,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
           ),
-        ),
-        RaisedButton(
-          child: Text("Go back"),
-          color: Colors.white,
-          shape: StadiumBorder(
-            side: BorderSide(color: Colors.black),
+          SizedBox(height: 30.0),
+          //popup right contents.
+          Container(
+            width: MediaQuery.of(context).size.width * 0.95,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Data of this app",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20,
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
+                SizedBox(height: 5),
+                Text(name),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text("Made with",
+                    style: TextStyle(fontWeight: FontWeight.w600)),
+                SizedBox(height: 5),
+                Text(usingTechnology),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text("Supported Platform",
+                    style: TextStyle(fontWeight: FontWeight.w600)),
+                SizedBox(height: 5),
+                Text(supportedPlatform),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Text(
+                  "Programing Languaged Used",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Text(programingLanguageUsed),
+                SizedBox(height: 10.0),
+                Text(
+                  "Donwloads",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 5.0,
+                ),
+                Text(downloads == 0 ? "?" : "over " + downloads.toString()),
+                SizedBox(height: 10.0),
+                Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
+                SizedBox(height: 5.0),
+                generateLinksWidget(
+                    githubLink, webLink, appStoreLink, playStoreLink),
+                SizedBox(
+                  height: 20.0,
+                ),
+              ],
+            ),
           ),
-          onPressed: () => Navigator.pop(context),
-        ),
-    ]);
+          RaisedButton(
+            child: Text("Go back"),
+            color: Colors.white,
+            shape: StadiumBorder(
+              side: BorderSide(color: Colors.black),
+            ),
+            onPressed: () => Navigator.pop(context),
+          ),
+        ]);
+  }
+
+  Widget generateLinksWidget(github, web, appstore, googleplay) {
+    List<Widget> linkWidgets = [];
+    List<String> urls = [github, web, appstore, googleplay];
+    List<IconData> icons = [
+      Fontisto.github,
+      Entypo.network,
+      Fontisto.app_store,
+      Fontisto.google_play
+    ];
+
+    var index = 0;
+    urls.forEach((element) {
+      if (element.startsWith('http')) {
+        linkWidgets.add(
+          Padding(
+            padding: EdgeInsets.all(5),
+            child: GestureDetector(
+              onTap: () {
+              launch(element);
+              },
+              child: Icon(icons[index]),
+            )
+          )
+        );
+      }
+      index++;
+    });
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: linkWidgets
+    );
   }
 
   Widget desktopDataWidget(context) {
-    return Column(
-      children:<Widget>[
-         Row(
+    return Column(children: <Widget>[
+      Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -347,21 +393,21 @@ class Details extends StatelessWidget {
                   SizedBox(height: 10.0),
                   Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
                   SizedBox(height: 5.0),
-                  Text("https://example.com")
+                  generateLinksWidget(
+                      githubLink, webLink, appStoreLink, playStoreLink),
                 ],
               ),
             ),
           ]),
-          SizedBox(height: 20.0),
-          RaisedButton(
-            child: Text("Go back"),
-            color: Colors.white,
-            shape: StadiumBorder(
-              side: BorderSide(color: Colors.black),
-            ),
-            onPressed: () => Navigator.pop(context),
+      SizedBox(height: 20.0),
+      RaisedButton(
+        child: Text("Go back"),
+        color: Colors.white,
+        shape: StadiumBorder(
+          side: BorderSide(color: Colors.black),
         ),
-        ]
-    );
+        onPressed: () => Navigator.pop(context),
+      ),
+    ]);
   }
 }

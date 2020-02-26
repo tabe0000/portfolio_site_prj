@@ -111,7 +111,7 @@ class Home extends StatelessWidget {
                   },
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 5.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
