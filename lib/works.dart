@@ -38,15 +38,21 @@ class _WorksState extends State<Works> {
                 children: <Widget>[
                   RaisedButton(
                     child: Text("All"),
-                    color: _selectedWorksTech == WorksTech.ALL ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.ALL
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
-                      side: BorderSide(color: Colors.black,),
+                      side: BorderSide(
+                        color: Colors.black,
+                      ),
                     ),
                     onPressed: () => refleshPortfolioCards(WorksTech.ALL),
                   ),
                   RaisedButton(
                     child: Text("Mobile"),
-                    color: _selectedWorksTech == WorksTech.MOBILE ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.MOBILE
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -54,7 +60,9 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Web"),
-                    color: _selectedWorksTech == WorksTech.WEB ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.WEB
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -62,7 +70,9 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("IoT"),
-                    color: _selectedWorksTech == WorksTech.IOT ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.IOT
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -70,7 +80,9 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Bot"),
-                    color: _selectedWorksTech == WorksTech.BOT ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.BOT
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -78,7 +90,9 @@ class _WorksState extends State<Works> {
                   ),
                   RaisedButton(
                     child: Text("Visual Art"),
-                    color: _selectedWorksTech == WorksTech.VISUAL_ART ? Colors.grey.withOpacity(0.9) : Colors.white,
+                    color: _selectedWorksTech == WorksTech.VISUAL_ART
+                        ? Colors.grey.withOpacity(0.9)
+                        : Colors.white,
                     shape: StadiumBorder(
                       side: BorderSide(color: Colors.black),
                     ),
@@ -140,19 +154,134 @@ class _WorksState extends State<Works> {
     _portfolioCards.add(
       PortfolioCard(
           "ニコ生コメントネギ振りシステム",
-          "Node.js,Arduino",
+          "Node.js, Arduino",
           13000,
           Fontisto.nodejs,
           "コメントでネギ振りが出来る謎システム",
           "assets/app_images/negi.gif",
           "ニコニコ生放送のコメントを取得し、Arduino経由で接続されたはちゅねミクにネギを振らせる\n\n前々から、ニコニコ技術部ではちゅねにネギを振らせる文化に自分も参加したいと思っていた。そしてとある日の深夜1時、唐突にゾーンに入り作り上げた\n\nリアルタイムにインターネットを介してハード制御をすることの楽しさを知った\n\nIoTって楽しいのではと気がつき、ノリと勢いでESP32とセンサーを買い込んだので、FlutterとFirebaseを組み合わせたIoTデバイスを作っていく予定\n\n完全に余談だが、これの作ってみた動画がニコニコニュースで紹介されたり、運営にタグホームへ貼り付けられたりした結果1.3万再生を達成した",
           "imgPath/descpath",
-          "Javascript",
+          "JavaScript",
           "Windows/Mac/Linux",
           "github link",
           "niconico link",
           WorksTech.IOT),
     );
+    _portfolioCards.add(
+      PortfolioCard(
+          "CeVIOとおバイク for iOS",
+          "iOS",
+          150,
+          Fontisto.apple,
+          "ネイティブで初めて作ったアプリ",
+          "assets/app_images/cobTitle.jpg",
+          "初めてネイティブで作ったアプリ\nIAちゃんとおバイクすることが出来る。\n\nネイティブのアプリ制作に興味があったのと、Twitterでの深夜テンションにより開発された。\n\n基本的にはボイロとおバイクと機能は同じ。\n\nせっかくMacMiniがあるのでARKitを使ってなんか面白いことをしていきたい",
+          "imgPath/descpath",
+          "Swift",
+          "iOS",
+          "github link",
+          "store link",
+          WorksTech.MOBILE),
+    );
+    _portfolioCards.add(PortfolioCard(
+        "CeVIOとおバイク for Android",
+        "Android",
+        150,
+        Fontisto.android,
+        "ネイティブで作成。バックグラウンド動作が可能になった。",
+        "assets/app_images/cboAndroidTitle.jpg",
+        "Unity版ボイロとおバイクで要望が多かった、バックグランド動作機能の追加、そして新規機能としてナビを搭載するためにネイティブ開発された。\n\nFragmentの理解をせずにActivityだけでほとんどの画面を作成するという愚行をなしたので、次回ナビ実装時にリファクタリングをする予定でいる。\n\n次回はKotlin使いたいなぁ...",
+        "imgPath/descpath",
+        "Java",
+        "Android",
+        "github link",
+        "store link",
+        WorksTech.MOBILE));
+    _portfolioCards.add(PortfolioCard(
+        "Flutter ポートフォリオサイト",
+        "Flutter",
+        0,
+        Entypo.network,
+        "あなたが今触っているこのサイト、実はFlutterです！",
+        "assets/app_images/flutter_portfolio.png",
+        "前のサイトの保守性がたいへんよろしくないものだったので作り直した。\n\nFlutter for Webはまだまだバグもあり安定はしていないが、ある程度組むことはできた。\n\n簡単に要素を追加できるようになったので、なにか問題が怒らなければしばらくこれを使い続けると思う。\n\nFlutterでWebサイトを制作する案件とか降ってくる世の中になるといいですね。",
+        "imgPath/descpath",
+        "Dart",
+        "Everything",
+        "https://github.com/tabe0000/portfolio_site_prj",
+        "https://tabedev.work",
+        WorksTech.WEB));
+    _portfolioCards.add(PortfolioCard(
+      "照度監視システム、アプリ",
+      "Flutter, Firebase, ESP32",
+      0,
+      Entypo.network,
+      "Flutter, Firebase RealtimeDatabaseを使用して、照度監視アプリを作成。",
+      "assets/app_images/monitor_brightness_app.png",
+      "高専ディープラーニングコンテスト(DCON)に使用するためのアプリのモックアップとして制作をした。\n\nFirebase RealtimeDatabaseとFlutterの連携における文献がほとんど無く制作するのが大変だった。時間ができたらFlutterとFirebaseの連携に関する記事を書いていきたい。\n\nまた、ESP32というマイコンを使った。このマイコンは一つ1000円にも満たないにもかかわらず、WiFI, Bluetoothを使うことが出来ることに驚いた。\n\nIoT製品を作る楽しさを知ったので、また何か作りたいと思う。\n\n写真のbrightnessがlightnessに見える人は病気です。スペルミスなんかじゃありません。ええ決して。勘違いしてたとかじゃありません。",
+      "imgpath/descpath",
+      "Dart, C",
+      "Android/iOS",
+      "no github page",
+      "https://twitter.com/tabe_unity/status/1210497318555766784?s=20",
+      WorksTech.IOT
+    ));
+    _portfolioCards.add(PortfolioCard(
+        "SoundCircle",
+        "Processing",
+        0,
+        Fontisto.java,
+        "音に反応する円形ビジュアライザ\n弾いてみた、歌ってみたからVJ素材にも。",
+        "assets/app_images/soundCircle.jpg",
+        "円形のビジュアライザ。音を可視化する。歌ってみた、弾いてみたなどの動画の背景にも使えると思う。VJに興味があることからこれからも作っていく予定。p5.jsに移植するかもしれない。",
+        "imagePath/descPath",
+        "Java",
+        "Windows/Mac/Linux",
+        "https://github.com/tabe0000",
+        "no web pagelink",
+        WorksTech.VISUAL_ART));
+    _portfolioCards.add(PortfolioCard(
+        "某有名ブラクラの再現",
+        "Processing",
+        0,
+        Fontisto.java,
+        "インターネット老人会の方はわかりますよね。",
+        "assets/app_images/alreadyIdiot.png",
+        "懐かしいアレです。\n\nProcessingの練習として画像を一切使用することなく、全てコーディングで作成しました。\n\n某事件が起こった直後に制作をしたため、一時期公開をしていなかったのですが、ほとぼりが冷めてきたので公開に切り替えました。音源はご自身でご用意ください。",
+        "imgpPath/descpath",
+        "Java",
+        "Windows/Mac/Linux",
+        "https://github.com/tabe0000/you-are-an-idiot-processing",
+        "web pagelink",
+        WorksTech.VISUAL_ART));
+    _portfolioCards.add(PortfolioCard(
+        "DiscordBot",
+        "node.js",
+        0,
+        Fontisto.nodejs,
+        "ゴリ押しでProcessingのコードを受け取り、画像を生成して返す。",
+        "assets/app_images/result.jpg",
+        "近々、Javascriptを触らないといけないっぽかったので、練習として作成した。\n\n今回は世界に挨拶するように天気API叩いても仕方ないので、Processingと連携させてみた。\n\n/proというコマンドとともに、ソースを投げると画像を生成して返してくれる。\n\n一応、他にもいろんな機能がある。(meme投げるとか、デプロイすると褒めてくれるとか、発狂するとか)\n\n実装方法をゴリ押しにしてしまい、セキュリティ的に大変よろしくないものとなったので身内サーバーで使う予定。\n\n割と楽しかったので、TwitterBotも作りたい。",
+        "imagePath/descPath",
+        "JavaScript",
+        "Windows/Mac/Linux",
+        "no github link",
+        "no web pagelink",
+        WorksTech.BOT));
+    _portfolioCards.add(PortfolioCard(
+        "nuko bot.",
+        "node.js",
+        0,
+        Fontisto.nodejs,
+        "手軽な「ぬこ」の補給方法を確立しました。",
+        "assets/app_images/nuko_bot.png",
+        "近々、Javascriptを触らないといけないっぽかったので、練習として作成した。\n\n今回は世界に挨拶するように天気API叩いても仕方ないので、Processingと連携させてみた。\n\n/proというコマンドとともに、ソースを投げると画像を生成して返してくれる。\n\n一応、他にもいろんな機能がある。(meme投げるとか、デプロイすると褒めてくれるとか、発狂するとか)\n\n実装方法をゴリ押しにしてしまい、セキュリティ的に大変よろしくないものとなったので身内サーバーで使う予定。\n\n割と楽しかったので、TwitterBotも作りたい。",
+        "imagePath/descPath",
+        "JavaScript",
+        "Windows/Mac/Linux",
+        "no github link",
+        "no web pagelink",
+        WorksTech.BOT));
     _portfolioCards.add(PortfolioCard(
         "ぬこ補給所",
         "React, Next.js",
@@ -164,9 +293,81 @@ class _WorksState extends State<Works> {
         "imgPath/descpath",
         "Javascript",
         "Everything",
-        "github link",
-        "web pagelink",
+        "no github link",
+        "https://nuko.now.sh",
         WorksTech.WEB));
+    _portfolioCards.add(PortfolioCard(
+        "RealTimeVRTrip",
+        "Unity",
+        0,
+        Fontisto.unity,
+        "VRとリアルタイムな映像で旅行を可能にした。",
+        "assets/app_images/robotgif.gif",
+        "３年生になったばかりの頃、友人を巻き込んで立ち上げたプロジェクト\n\n自宅でVR機材を使うだけで遠隔旅行が可能になる\n\nロボット本体は完成している. 遠隔動作テストをしてみたところ動作した\n\nロボット遠隔制御通信にはオンラインゲームエンジンのphotonを用いた\n\nもしかしたら、ロボットを中継機としてドローンを遠隔操作するものへと変わるかもしれない\n\nあとは映像転送方法をどうするか検討中",
+        "imagepath/descPath",
+        "C#",
+        "Windows",
+        "no github link",
+        "no web pagelink",
+        WorksTech.IOT));
+    _portfolioCards.add(PortfolioCard(
+        "タイマー付きTodoリスト",
+        "Flutter",
+        0,
+        Entypo.network,
+        "Inherited Widgetを使ったデータの取り回しの学習と、定期テストに向けてタイマー付きTodoリストが欲しかったので作った。",
+        "assets/app_images/timer_todo_list.png",
+        "Inherited Widgetを使ったデータの取り回しの学習と、定期テストに向けてタイマー付きTodoリストが欲しかったので作った\n\nFlutterにおけるデザインパターンの代表例であるBLoCを学ぶ前に、とりあえず基礎から学ぼうと思いInherited Widgetを取り入れた。結果としてあまりメリットがないような組み方となってしまったが、過程のなかでは理解をしながら制作を進めたので理解自体は深まった\n\n今後はもう少し InheritedWidgetを使ったものを作っていき、煩わしさを感じてきたらProvider, その他デザインパターンに取り組みたい\n\nこのTodoリストは取り組んでいるものを可視化、タイマーを設置して効率化を図ったが自分に対しては拘束力を発揮せず、無意味なものだった。しかし友人が効果があるとして使ってくれたので良かった。\n\n Netlifyに初めてデプロイしたが、単純明快でやりやすかった。これから、ちょっとしたものを公開する時はNetlifyを使っていくと思う。",
+        "imagepath/descPath",
+        "Dart",
+        "Everything",
+        "https://github.com/tabe0000/timer_todo_list",
+        "https://upbeat-bhabha-6ac256.netlify.com/#/",
+        WorksTech.WEB));
+    _portfolioCards.add(PortfolioCard(
+      "VOICEROID & CeVIOにゃーんあぷり",
+      "Flutter",
+      10,
+      Entypo.mobile,
+      "にゃーん。",
+      "assets/app_images/nyan_1.jpg",
+      "インターン先のホテルで、ノリと勢いだけで作られたアプリ。\n作業中、Flutterは神だったと感じた気がする。\n\nこのアプリを使うと、ボイロとCeVIOが「にゃーんと」言ってくれる。\nデバッグ時の精神状態が半端なく良かった。\nkirinya.mp3とかクソかわええみたいな感じになっていた。\n\n初めてQiita記事を書くきっけかとなったものでもある。（ローカル音声再生系)",
+      "imagePath/descPath",
+      "Dart",
+      "Android",
+      "no github page",
+      "https://play.google.com/store/apps/details?id=work.tabedev.nyanapp.nyan",
+      WorksTech.MOBILE,
+    ));
+    _portfolioCards.add(PortfolioCard(
+        "Flutter Todo List for Web",
+        "Flutter",
+        0,
+        Entypo.network,
+        "Flutterで初めて作られた作られたTodoアプリ。Webで動く。",
+        "assets/app_images/flutter_todo_list.png",
+        "WebでFlutterが動くということで、UI,　ロジックの練習を兼ねて作ってみた。\n\n結構いきあたりばったりな開発であったため、コードが大変宜しくない組み方になっている。\n\n\nFlutter for Webは安定していないため色々と不具合があり大変だったが、なんだかんだで楽しかった。\n\nWebでも動くため、学校でも積極的に使っていきたい。",
+        "imagepath/descPath",
+        "Dart",
+        "Everything",
+        "https://github.com/tabe0000/flutter_todo_list_for_web",
+        "https://tabe0000.github.io/flutter_todo_list_for_web/#/",
+        WorksTech.WEB));
+    _portfolioCards.add(PortfolioCard(
+        "旧ポートフォリオサイト",
+        "HTML&CSS",
+        0,
+        Fontisto.html5,
+        "以前、運用していたサイト。HTML&CSSで制作をしていた。",
+        "assets/app_images/htmlcss.png",
+        "前のサイトがmarkdownで書かれたサイトでなんともまぁ味気ないというか、寂しさがすごかったので作ったみた\n\nいろいろな企業を調べていると、割と何をやるにせよ身につけておいて損はないと感じたのでこれからも続けていく",
+        "imagepath/descPath",
+        "HTML&CSS",
+        "Everything",
+        "no github link",
+        "no webpagelink",
+        WorksTech.WEB));
+
     _selectedPortfolioCards = _portfolioCards;
   }
 }

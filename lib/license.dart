@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Link extends StatelessWidget {
+class License extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -29,7 +29,7 @@ class Link extends StatelessWidget {
 
   Widget licenseContainer(softwareName, licenseSentence) {
     return Container(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(20),
       child: Column(
         children: <Widget>[
           Text(

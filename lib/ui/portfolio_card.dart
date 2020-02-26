@@ -65,10 +65,15 @@ class _PortfolioCardState extends State<PortfolioCard> {
           );
         },
         child: Container(
+            constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height / 2),
             child: Card(
                 child: Column(children: <Widget>[
-          Container(
-            child: Image.asset(widget.thumbnailImagePath),
+          ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height / 3),
+            child: Image.asset(
+              widget.thumbnailImagePath,
+              fit: BoxFit.fill
+              ),
           ),
           Container(
               child: Column(children: <Widget>[
@@ -243,99 +248,120 @@ class Details extends StatelessWidget {
             ],
           ),
         ),
+        RaisedButton(
+          child: Text("Go back"),
+          color: Colors.white,
+          shape: StadiumBorder(
+            side: BorderSide(color: Colors.black),
+          ),
+          onPressed: () => Navigator.pop(context),
+        ),
     ]);
   }
 
   Widget desktopDataWidget(context) {
-    return Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          //popup left contents.
-          Container(
-            width: MediaQuery.of(context).size.width / 2.5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 35.0),
-                  child: SizedBox(
-                    height: null,
-                    width: MediaQuery.of(context).size.width / 2.0,
-                    child: Image.asset(thumbnailImagePath),
+    return Column(
+      children:<Widget>[
+         Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            //popup left contents.
+            Container(
+              width: MediaQuery.of(context).size.width / 2.5,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 35.0),
+                    child: SizedBox(
+                      height: null,
+                      width: MediaQuery.of(context).size.width / 2.0,
+                      child: Image.asset(thumbnailImagePath),
+                    ),
                   ),
-                ),
-                Text(
-                  description,
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-          //popup right contents.
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 35.0),
-            width: MediaQuery.of(context).size.width / 3.5,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  "Data of this app",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20,
+                  Text(
+                    description,
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
-                Text(name),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text("Made with",
-                    style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
-                Text(usingTechnology),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text("Supported Platform",
-                    style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
-                Text(supportedPlatform),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  "Programing Languaged Used",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Text(programingLanguageUsed),
-                SizedBox(height: 10.0),
-                Text(
-                  "Donwloads",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
-                Text(downloads == 0 ? "?" : "over " + downloads.toString()),
-                SizedBox(height: 10.0),
-                Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5.0),
-                Text("https://example.com")
-              ],
+                ],
+              ),
             ),
-          ),
-        ]);
+            //popup right contents.
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 35.0),
+              width: MediaQuery.of(context).size.width / 3.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Data of this app",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
+                  SizedBox(height: 5),
+                  Text(name),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text("Made with",
+                      style: TextStyle(fontWeight: FontWeight.w600)),
+                  SizedBox(height: 5),
+                  Text(usingTechnology),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text("Supported Platform",
+                      style: TextStyle(fontWeight: FontWeight.w600)),
+                  SizedBox(height: 5),
+                  Text(supportedPlatform),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    "Programing Languaged Used",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text(programingLanguageUsed),
+                  SizedBox(height: 10.0),
+                  Text(
+                    "Donwloads",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text(downloads == 0 ? "?" : "over " + downloads.toString()),
+                  SizedBox(height: 10.0),
+                  Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
+                  SizedBox(height: 5.0),
+                  Text("https://example.com")
+                ],
+              ),
+            ),
+          ]),
+          SizedBox(height: 20.0),
+          RaisedButton(
+            child: Text("Go back"),
+            color: Colors.white,
+            shape: StadiumBorder(
+              side: BorderSide(color: Colors.black),
+            ),
+            onPressed: () => Navigator.pop(context),
+        ),
+        ]
+    );
   }
 }

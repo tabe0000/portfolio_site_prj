@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'link.dart';
+import 'license.dart';
 import 'works.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,7 +36,7 @@ class _MainPageState extends State<MainPage>
       text: "Works",
     ),
     Tab(
-      text: "Link",
+      text: "License",
     ),
   ];
   TabController _tabController;
@@ -77,7 +77,7 @@ class _MainPageState extends State<MainPage>
           children: [
             Home(),
             Works(),
-            Link(),
+            License(),
           ]
         ));
   }
