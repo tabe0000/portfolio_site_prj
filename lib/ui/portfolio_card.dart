@@ -75,7 +75,8 @@ class _PortfolioCardState extends State<PortfolioCard> {
         },
         child: Container(
             constraints: BoxConstraints(
-                maxHeight: MediaQuery.of(context).size.height / 1.5),
+                maxHeight:  MediaQuery.of(context).size.width < 600 ? MediaQuery.of(context).size.height / 1.5 :  MediaQuery.of(context).size.height / 2,
+              ),
             child: Card(
                 child: Column(children: <Widget>[
               ConstrainedBox(
