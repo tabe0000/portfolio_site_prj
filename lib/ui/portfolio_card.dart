@@ -220,7 +220,6 @@ class Details extends StatelessWidget {
                     Text("https://example.com")
                   ],
                 ),
-                Spacer(),
               ]))),
     );
   }
