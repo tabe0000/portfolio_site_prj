@@ -306,7 +306,7 @@ class _WorksState extends State<Works> {
         Fontisto.react,
         "nuko.now.shが取れてしまった",
         "assets/app_images/next_nuko_serve.png",
-        "desc",
+        "Webフロントエンドフレームワークに触れたことがなかったというのと、HTML&CSSを素でガシガシ書くのはもう疲れたのでちょっとやってみた。\n\nこれを作った後にReactでポートフォリオサイトを作る予定だったが、諸事情によりFlutterになったためお蔵入り。\n\nただ、ReactNativeも触れるような気がするので、慣れてきてWebサイトをまた作るときになったら、またお世話になるかもしれない。\n\nこれ、ZEITにデプロイして驚いたのですが、nukoってプロジェクト誰も作ってなかったんですね。nuko.workも持っているのですが、これはこれで面白そうなので続けていきます。",
         "imgPath/descpath",
         "Javascript",
         "Everything",
