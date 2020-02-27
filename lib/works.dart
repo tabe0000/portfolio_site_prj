@@ -210,7 +210,7 @@ class _WorksState extends State<Works> {
         Entypo.network,
         "あなたが今触っているこのサイト、実はFlutterです！",
         "assets/app_images/flutter_portfolio.png",
-        "前のサイトの保守性がたいへんよろしくないものだったので作り直した。\n\nFlutter for Webはまだまだバグもあり安定はしていないが、ある程度組むことはできた。\n\n簡単に要素を追加できるようになったので、なにか問題が怒らなければしばらくこれを使い続けると思う。\n\nFlutterでWebサイトを制作する案件とか降ってくる世の中になるといいですね。",
+        "前のサイトの保守性がたいへんよろしくないものだったので作り直した。\n\nFlutter for Webはまだまだバグもあり安定はしていないが、ある程度組むことはできた。\n\n簡単に要素を追加できるようになったので、なにか問題が起こらなければしばらくこれを使い続けると思う。\n\nFlutterでWebサイトを制作する案件とか降ってくる世の中になるといいですね。",
         "imgPath/descpath",
         "Dart",
         "Everything",
