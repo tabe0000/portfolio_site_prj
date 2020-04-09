@@ -201,71 +201,71 @@ class Details extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text(
+                const Text(
                   "Data of this app",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 20,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
-                Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
+                const Text("Title", style: const TextStyle(fontWeight: FontWeight.w600)),
+                const SizedBox(height: 5),
                 Text(name),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
-                Text("Made with",
-                    style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
+                const Text("Made with",
+                    style: const TextStyle(fontWeight: FontWeight.w600)),
+                const SizedBox(height: 5),
                 Text(usingTechnology),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
-                Text("Supported Platform",
-                    style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5),
+                const Text("Supported Platform",
+                    style: const TextStyle(fontWeight: FontWeight.w600)),
+                const SizedBox(height: 5),
                 Text(supportedPlatform),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
-                Text(
+                const Text(
                   "Programing Languaged Used",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 Text(programingLanguageUsed),
-                SizedBox(height: 10.0),
-                Text(
+                const SizedBox(height: 10.0),
+                const Text(
                   "Donwloads",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5.0,
                 ),
                 Text(downloads == 0 ? "?" : "over " + downloads.toString()),
                 SizedBox(height: 10.0),
-                Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
-                SizedBox(height: 5.0),
+                const Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
+                const SizedBox(height: 5.0),
                 generateLinksWidget(
                     githubLink, webLink, appStoreLink, playStoreLink),
-                SizedBox(
+                const SizedBox(
                   height: 20.0,
                 ),
               ],
             ),
           ),
           RaisedButton(
-            child: Text("Go back"),
+            child: const Text("Go back"),
             color: Colors.white,
-            shape: StadiumBorder(
-              side: BorderSide(color: Colors.black),
+            shape: const StadiumBorder(
+              side: const BorderSide(color: Colors.black),
             ),
             onPressed: () => Navigator.pop(context),
           ),
@@ -340,70 +340,70 @@ class Details extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text(
+                  const Text(
                     "Data of this app",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 20,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
-                  SizedBox(height: 5),
+                  const Text("Title", style: TextStyle(fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 5),
                   Text(name),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
-                  Text("Made with",
-                      style: TextStyle(fontWeight: FontWeight.w600)),
-                  SizedBox(height: 5),
+                  const Text("Made with",
+                      style: const TextStyle(fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 5),
                   Text(usingTechnology),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
-                  Text("Supported Platform",
+                  const Text("Supported Platform",
                       style: TextStyle(fontWeight: FontWeight.w600)),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(supportedPlatform),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
-                  Text(
+                  const Text(
                     "Programing Languaged Used",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5.0,
                   ),
                   Text(programingLanguageUsed),
-                  SizedBox(height: 10.0),
-                  Text(
+                  const SizedBox(height: 10.0),
+                  const Text(
                     "Donwloads",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5.0,
                   ),
                   Text(downloads == 0 ? "?" : "over " + downloads.toString()),
-                  SizedBox(height: 10.0),
-                  Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
-                  SizedBox(height: 5.0),
+                  const SizedBox(height: 10.0),
+                  const Text("Link", style: TextStyle(fontWeight: FontWeight.w600)),
+                  const SizedBox(height: 5.0),
                   generateLinksWidget(
                       githubLink, webLink, appStoreLink, playStoreLink),
                 ],
               ),
             ),
           ]),
-      SizedBox(height: 20.0),
+      const SizedBox(height: 20.0),
       RaisedButton(
-        child: Text("Go back"),
+        child: const Text("Go back"),
         color: Colors.white,
-        shape: StadiumBorder(
-          side: BorderSide(color: Colors.black),
+        shape: const StadiumBorder(
+          side: const BorderSide(color: Colors.black),
         ),
         onPressed: () => Navigator.pop(context),
       ),

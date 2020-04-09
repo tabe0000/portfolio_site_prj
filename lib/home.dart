@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               ListTile(
@@ -100,7 +100,7 @@ class Home extends StatelessWidget {
                   'css': IconStyle(Fontisto.css3),
                 },
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5.0,
               ),
               Row(
@@ -110,7 +110,7 @@ class Home extends StatelessWidget {
                     onTap: () {
                       launch("https://github.com/tabe0000");
                     },
-                    child: Icon(
+                    child: const Icon(
                       FontAwesomeIcons.githubSquare,
                       size: 40,
                     ),
@@ -122,7 +122,7 @@ class Home extends StatelessWidget {
                     onTap: () {
                       launch("https://twitter.com/tabe_unity");
                     },
-                    child: Icon(
+                    child: const Icon(
                       FontAwesomeIcons.twitterSquare,
                       size: 40,
                     ),

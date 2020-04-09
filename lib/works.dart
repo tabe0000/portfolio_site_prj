@@ -37,7 +37,7 @@ class _WorksState extends State<Works> {
                 spacing: 10.0,
                 children: <Widget>[
                   RaisedButton(
-                    child: Text("All"),
+                    child: const Text("All"),
                     color: _selectedWorksTech == WorksTech.ALL
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
@@ -49,17 +49,17 @@ class _WorksState extends State<Works> {
                     onPressed: () => refleshPortfolioCards(WorksTech.ALL),
                   ),
                   RaisedButton(
-                    child: Text("Mobile"),
+                    child: const Text("Mobile"),
                     color: _selectedWorksTech == WorksTech.MOBILE
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
                     shape: StadiumBorder(
-                      side: BorderSide(color: Colors.black),
+                      side: const BorderSide(color: Colors.black),
                     ),
                     onPressed: () => refleshPortfolioCards(WorksTech.MOBILE),
                   ),
                   RaisedButton(
-                    child: Text("Web"),
+                    child: const Text("Web"),
                     color: _selectedWorksTech == WorksTech.WEB
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
@@ -69,7 +69,7 @@ class _WorksState extends State<Works> {
                     onPressed: () => refleshPortfolioCards(WorksTech.WEB),
                   ),
                   RaisedButton(
-                    child: Text("IoT"),
+                    child: const Text("IoT"),
                     color: _selectedWorksTech == WorksTech.IOT
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
@@ -79,22 +79,22 @@ class _WorksState extends State<Works> {
                     onPressed: () => refleshPortfolioCards(WorksTech.IOT),
                   ),
                   RaisedButton(
-                    child: Text("Bot"),
+                    child: const Text("Bot"),
                     color: _selectedWorksTech == WorksTech.BOT
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
-                    shape: StadiumBorder(
-                      side: BorderSide(color: Colors.black),
+                    shape: const StadiumBorder(
+                      side: const BorderSide(color: Colors.black),
                     ),
                     onPressed: () => refleshPortfolioCards(WorksTech.BOT),
                   ),
                   RaisedButton(
-                    child: Text("Visual Art"),
+                    child: const Text("Visual Art"),
                     color: _selectedWorksTech == WorksTech.VISUAL_ART
                         ? Colors.grey.withOpacity(0.9)
                         : Colors.white,
-                    shape: StadiumBorder(
-                      side: BorderSide(color: Colors.black),
+                    shape: const StadiumBorder(
+                      side: const BorderSide(color: Colors.black),
                     ),
                     onPressed: () =>
                         refleshPortfolioCards(WorksTech.VISUAL_ART),
@@ -103,7 +103,7 @@ class _WorksState extends State<Works> {
               ),
             ),
             ListView.builder(
-              physics: ClampingScrollPhysics(),
+              physics: const ClampingScrollPhysics(),
               shrinkWrap: true,
               itemCount: _selectedPortfolioCards.length,
               itemBuilder: (BuildContext context, int index) {
